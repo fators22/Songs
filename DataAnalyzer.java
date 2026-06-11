@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class DataAnalyzer{
     
     //creates a list of songs from a file
-    public ArrayList<Song> createSongsCJ(ArrayList<String> songData) {
+    public ArrayList<Song> createSongs(ArrayList<String> songData) {
         ArrayList<Song> songs = new ArrayList<>();
         for(int i = 1; i < songData.size(); i++) {
             String line = songData.get(i);
@@ -152,7 +152,7 @@ public class DataAnalyzer{
     public static void main(String[] args) {
         ArrayList<String> songlist = FileOperator.getStringList("dataset.csv");
         DataAnalyzer analyzer = new DataAnalyzer();
-        ArrayList<Song> songs = analyzer.createSongsCJ(songlist);
+        ArrayList<Song> songs = analyzer.createSongs(songlist);
 
         //SUM
         double sum = analyzer.findSumInstrumentalness(songs);
